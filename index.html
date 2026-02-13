@@ -5,29 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        </body><script>
-setInterval(() => {
-  const bunga = document.createElement("div");
-  bunga.innerHTML = "🌸";
-  bunga.style.position = "fixed";
-  bunga.style.left = Math.random() * window.innerWidth + "px";
-  bunga.style.top = "-20px";
-  bunga.style.fontSize = "20px";
-  bunga.style.animation = "jatuh 5s linear";
-  document.body.appendChild(bunga);
-
-  setTimeout(() => bunga.remove(), 5000);
-}, 500);
-
-</script>
-
-<style>
-@keyframes jatuh {
-  to {
-    transform: translateY(100vh);
-  }
-}
-</style>
+      
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #ff9ecf, #ffc3e6);
@@ -236,5 +214,28 @@ header h1 {
 
 .gallery img:hover {
   transform: scale(1.05);
+}
+</style>
+<script>
+setInterval(() => {
+  const bunga = document.createElement("div");
+  bunga.innerHTML = "🌸";
+  bunga.style.position = "fixed";
+  bunga.style.left = Math.random() * window.innerWidth + "px";
+  bunga.style.top = "-20px";
+  bunga.style.fontSize = "20px";
+  bunga.style.animation = "jatuh 5s linear";
+  document.body.appendChild(bunga);
+
+  setTimeout(() => bunga.remove(), 5000);
+}, 500);
+
+</script>
+
+<style>
+@keyframes jatuh {
+  to {
+    transform: translateY(100vh);
+  }
 }
 </style>
