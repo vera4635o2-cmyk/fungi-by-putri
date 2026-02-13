@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fungi by Putri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff9ecf, #ffc3e6);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: white;
+            color: #ff4fa3;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff4fa3;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            padding-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ff4fa3;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .gallery img {
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍄 Fungi by Putri</h1>
+    <p>Nama: Putri Wulansari | Kelas: X.C</p>
+
+    <!-- Tombol buka di Chrome -->
+    <a class="btn" href="" target="_blank">
+        🌍 Buka Web di Chrome
+    </a>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Apa Itu Fungi?</h2>
+        <p>
+            Fungi adalah organisme eukariotik yang tidak memiliki klorofil.
+            Fungi berkembang biak dengan spora dan berperan penting dalam
+            ekosistem sebagai pengurai.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Jenis-Jenis Fungi</h2>
+        <ul>
+            <li>Zygomycota</li>
+            <li>Ascomycota</li>
+            <li>Basidiomycota</li>
+            <li>Deuteromycota</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Galeri Foto Fungi</h2>
+        <p>Pilih banyak foto sekaligus 👇</p>
+        <input type="file" id="imageInput" multiple accept="image/*">
+        <div class="gallery" id="gallery"></div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Fungi by Putri
+</footer>
+
+<script>
+    const input = document.getElementById("imageInput");
+    const gallery = document.getElementById("gallery");
+
+    input.addEventListener("change", function() {
+        gallery.innerHTML = "";
+        const files = input.files;
+
+        for (let i = 0; i < files.length; i++) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                gallery.appendChild(img);
+            }
+            reader.readAsDataURL(files[i]);
+        }
+    });
+</script>
+
+</body>
+</html>
